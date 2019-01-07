@@ -3,7 +3,7 @@
 Offensive ELK is a way to ingest and visualize NMap xml data for Redteam engagements.  It will give you the ability to analyze any data set by using the searching/aggregation capabilities of Elasticsearch
 and the visualization power of Kibana.  Input data is customizeable by tags that are created by the filename of the NMap XML files.  Now you can finally see an aggregate of your NMap scans in one place, and quickly search for vulnerabilities, view patterns, and identify misconfigurations.
 
-![Image of dashboard](./raw/master/screenshots/dashboard.png?inline=true)
+![Image of dashboard](../raw/master/screenshots/dashboard.png?inline=true)
 
 Based on the official Docker images from Elastic:
 
