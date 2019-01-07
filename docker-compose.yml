@@ -1,0 +1,86 @@
+version: '2'
+
+services:
+
+  # ------------------------------------------------------------------------------------
+  # ELASTICSEARCH
+  # ------------------------------------------------------------------------------------
+  elasticsearch:
+    container_name: off_elk_elasticsearch
+    build:
+      context: elasticsearch/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    restart: always
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./_data/elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - off_elk
+
+  # ------------------------------------------------------------------------------------
+  # LOGSTASH
+  # ------------------------------------------------------------------------------------
+  #  logstash:
+  #  container_name: off_elk_logstash
+  #  build:
+  #    context: logstash/
+  #    args:
+  #      ELK_VERSION: $ELK_VERSION
+  #  restart: always
+  #  volumes:
+  #    - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+  #    - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+  #  ports:
+  #    - "5000:5000"
+  #    - "9600:9600"
+  #  environment:
+  #    LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+  #  networks:
+  #    - off_elk
+  #  depends_on:
+  #    - elasticsearch
+  #
+  # ------------------------------------------------------------------------------------
+  # kibana
+  # ------------------------------------------------------------------------------------
+  kibana:
+    container_name: off_elk_kibana
+    build:
+      context: kibana/
+      args:
+        ELK_VERSION: $ELK_VERSION
+    restart: always
+    volumes:
+      - ./kibana/config/:/usr/share/kibana/config:ro
+    ports:
+      - "5601:5601"
+    networks:
+      - off_elk
+    depends_on:
+      - elasticsearch
+
+  # ------------------------------------------------------------------------------------
+  # ingestor
+  # ------------------------------------------------------------------------------------
+  ingestor:
+    container_name: off_elk_ingestor
+    build:
+      context: ingestor/
+    volumes:
+      - ./_data/ingestor/:/data/
+    networks:
+      - off_elk
+    depends_on:
+      - elasticsearch
+      - kibana
+    restart: on-failure
+
+networks:
+  off_elk:
+    driver: bridge

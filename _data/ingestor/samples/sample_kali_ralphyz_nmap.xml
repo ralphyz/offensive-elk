@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.70 scan initiated Fri Jan  4 06:42:18 2019 as: nmap -p- -oX sample_kali_ralphyz_nmap.xml -A -T aggressive localhost -->
+<nmaprun scanner="nmap" args="nmap -p- -oX sample_kali_ralphyz_nmap.xml -A -T aggressive localhost" start="1546602138" startstr="Fri Jan  4 06:42:18 2019" version="7.70" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1546602138" endtime="1546602276"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="user"/>
+<hostname name="localhost" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65529">
+<extrareasons reason="resets" count="65529"/>
+</extraports>
+<port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ftp" product="Pure-FTPd" method="probed" conf="10"><cpe>cpe:/a:pureftpd:pure-ftpd</cpe></service></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="7.9p1 Debian 4" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.9p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 29:90:40:03:6d:2f:5a:42:74:eb:9b:35:3f:09:6a:30 (RSA)&#xa;  256 77:0e:2e:3f:7b:6c:d2:0f:68:fa:3e:39:d8:0a:9e:8a (ECDSA)&#xa;  256 2b:f1:ff:f8:30:8c:28:13:a5:34:f3:48:94:8f:25:da (ED25519)"><table>
+<elem key="fingerprint">299040036d2f5a4274eb9b353f096a30</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="bits">2048.0</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQDgj7sKHmy8PZXIA3eRbzkfYJxchve4trYxwTK5ljZKKiID0fIYfR2yYlpNsLZx7yjen/Vup8arpgvhViCRKFOZ8wONw0iJStCQQOMwVXgfsG3iq+O8FNdmDCwLd/dphDAekFaSBvsAFcqBkEYZj1Rp27/KoOQwVUOHJeYIqLPsCXIRU11qKgXb+/Kk8R7OESSgvfFYm83K3cw+872r2tAbRG37Al6wbITAiraOzmnXMw6Ufh4ehx1Dpgo95aNbpeIqHawT/WWgiPGtOczJZe+4T4oQmcpUyfMDQZR/rfs3IelF+vV5r3WOVo8NOvag+y6rgxxq+ieU+ialdWVrdARD</elem>
+</table>
+<table>
+<elem key="fingerprint">770e2e3f7b6cd20f68fa3e39d80a9e8a</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAF2VjZHNeLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBB52kwXn7+UOz2RUikuahphpZLwD6JEj0zhPKTSWRVWVWdeYEr0qJourm6nu2s82LejmSbuEqYzYxsvaV4dGUAw=</elem>
+</table>
+<table>
+<elem key="fingerprint">2bf1fff8308c2813a534f348948f25da</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="bits">256</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAII4gwAK13B9Jgmb3rTb3/EG1ZsWpiPF0Bk5C5clLdAz2</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.37" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.37</cpe></service><script id="http-server-header" output="Apache/2.4.37 (Debian)"><elem>Apache/2.4.37 (Debian)</elem>
+</script><script id="http-title" output="Apache2 Debian Default Page: It works"><elem key="title">Apache2 Debian Default Page: It works</elem>
+</script></port>
+<port protocol="tcp" portid="3306"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mysql" product="MySQL" version="5.5.5-10.1.35-MariaDB-1" method="probed" conf="10"><cpe>cpe:/a:mysql:mysql:5.5.5-10.1.35-mariadb-1</cpe></service><script id="mysql-info" output="&#xa;  Protocol: 10&#xa;  Version: 5.5.5-10.1.35-MariaDB-1&#xa;  Thread ID: 819&#xa;  Capabilities flags: 63487&#xa;  Some Capabilities: InteractiveClient, ODBCClient, FoundRows, IgnoreSigpipes, SupportsTransactions, ConnectWithDatabase, LongColumnFlag, Speaks41ProtocolOld, Support41Auth, DontAllowDatabaseTableColumn, LongPassword, Speaks41ProtocolNew, SupportsCompression, SupportsLoadDataLocal, IgnoreSpaceBeforeParenthesis, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins&#xa;  Status: Autocommit&#xa;  Salt: I\sNjJs$Xm?2{8B&quot;#)CU&#xa;  Auth Plugin Name: 96"><elem key="Protocol">10</elem>
+<elem key="Version">5.5.5-10.1.35-MariaDB-1</elem>
+<elem key="Thread ID">819</elem>
+<elem key="Capabilities flags">63487</elem>
+<table key="Some Capabilities">
+<elem>InteractiveClient</elem>
+<elem>ODBCClient</elem>
+<elem>FoundRows</elem>
+<elem>IgnoreSigpipes</elem>
+<elem>SupportsTransactions</elem>
+<elem>ConnectWithDatabase</elem>
+<elem>LongColumnFlag</elem>
+<elem>Speaks41ProtocolOld</elem>
+<elem>Support41Auth</elem>
+<elem>DontAllowDatabaseTableColumn</elem>
+<elem>LongPassword</elem>
+<elem>Speaks41ProtocolNew</elem>
+<elem>SupportsCompression</elem>
+<elem>SupportsLoadDataLocal</elem>
+<elem>IgnoreSpaceBeforeParenthesis</elem>
+<elem>SupportsMultipleStatments</elem>
+<elem>SupportsMultipleResults</elem>
+<elem>SupportsAuthPlugins</elem>
+</table>
+<elem key="Status">Autocommit</elem>
+<elem key="Salt">I\sNjJs$Xm?3{8B&quot;#)CU</elem>
+<elem key="Auth Plugin Name">96</elem>
+</script></port>
+<port protocol="tcp" portid="6010"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="x11" servicefp="SF-Port6010-TCP:V=7.70%I=7%D=1/4%Time=5C2F46A1%P=x86_64-pc-linux-gnu%r(X11Probe,40,&quot;\x008\x0b\0\0\0\x0e\0MobaXterm\x20X11\x20proxy:\x20Unsupported\x20authorisation\x20protocol\n&quot;)%r(DNSStatusRequestTCP,40,&quot;\x008\0\0\x10\0\x0e\0MobaXterm\x20X11\x20proxy:\x20Unsupported\x20authorisation\x20protocol\n&quot;)%r(NotesRPC,40,&quot;\x008\0\0/\0\x0e\0MobaXterm\x20X11\x20proxy:\x20Unsupported\x20authorisation\x20protocol\n&quot;)%r(ms-sql-s,40,&quot;\x008\x004\0\0\x0e\0MobaXterm\x20X11\x20proxy:\x20Unsupported\x20authorisation\x20protocol\n&quot;)%r(afp,40,&quot;\x008\0\x01\0\0\x0e\0MobaXterm\x20X11\x20proxy:\x20Unsupported\x20authorisation\x20protocol\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  DNSStatusRequestTCP, NotesRPC, X11Probe, afp, ms-sql-s: &#xa;    MobaXterm X11 proxy: Unsupported authorisation protocol"><elem key="DNSStatusRequestTCP, NotesRPC, X11Probe, afp, ms-sql-s">&#xa;    MobaXterm X11 proxy: Unsupported authorisation protocol</elem>
+</script></port>
+<port protocol="tcp" portid="6379"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="redis" product="Redis key-value store" version="5.0.2" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="21"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="37376"/>
+<osmatch name="Linux 3.8 - 4.14" accuracy="100" line="66190">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="114408" lastboot="Wed Jan  2 22:57:48 2019"/>
+<distance value="0"/>
+<tcpsequence index="261" difficulty="Good luck!" values="2DDA044C,B8EFDE7,1C81B94C,92144025,D3390C79,1853B8A9"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="6D1951B,6D1957F,6D195E3,6D19647,6D196AB,6D1970F"/>
+<times srtt="21" rttvar="5" to="100000"/>
+</host>
+<runstats><finished time="1546602276" timestr="Fri Jan  4 06:44:36 2019" elapsed="138.43" summary="Nmap done at Fri Jan  4 06:44:36 2019; 1 IP address (1 host up) scanned in 138.43 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
