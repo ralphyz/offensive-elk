@@ -1,6 +1,6 @@
 # Offensive ELK on Docker
 
-Offensive ELK is a way to ingest and visualize NMap xml data.  It will give you the ability to analyze any data set by using the searching/aggregation capabilities of Elasticsearch
+Offensive ELK is a way to ingest and visualize NMap xml data for Redteam engagements.  It will give you the ability to analyze any data set by using the searching/aggregation capabilities of Elasticsearch
 and the visualization power of Kibana.  Input data is customizeable by tags that are created by the filename of the NMap XML files.  Now you can finally see an aggregate of your NMap scans in one place, and quickly search for vulnerabilities, view patterns, and identify misconfigurations.
 
 ![Image of dashboard](https://gitlab.pg.com/duncan.b/docker-offensive-elk/raw/master/screenshots/dashboard.png?inline=true)
@@ -75,7 +75,6 @@ Give Kibana a few seconds to initialize, then access the Kibana web UI by hittin
 [http://localhost:5601](http://localhost:5601) with a web browser.
 
 By default, the stack exposes the following ports:
-* 5000: Logstash TCP input.
 * 9200: Elasticsearch HTTP
 * 9300: Elasticsearch TCP transport
 * 5601: Kibana
